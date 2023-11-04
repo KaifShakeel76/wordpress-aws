@@ -1,0 +1,50 @@
+Certainly! Here are detailed steps to launch an EC2 instance on AWS:
+
+1. **Sign in to the AWS Console:**
+   - Open your web browser and go to the AWS Console: [https://aws.amazon.com/console/](https://aws.amazon.com/console/).
+   - Sign in using your AWS account credentials.
+
+2. **Navigate to EC2:**
+   - In the AWS Console, type "EC2" in the search bar or find it under "Compute" services in the services menu.
+
+3. **Launch an Instance:**
+   - In the EC2 Dashboard, click on the "Launch Instance" button.
+
+4. **Choose an Amazon Machine Image (AMI):**
+   - You'll be presented with a list of available AMIs. Choose an AMI that suits your needs. Amazon Linux 2 is a popular choice for general purposes.
+
+5. **Choose an Instance Type:**
+   - Select the instance type that fits your requirements. The "t2.micro" instance type is available under the Free Tier.
+
+6. **Configure Instance Details:**
+   - You can leave most of the settings as default, but you may want to pay attention to options like:
+     - **Number of instances:** Set it to 1 (unless you need multiple instances).
+     - **Network:** Choose your preferred VPC.
+     - **Subnet:** Choose a subnet within your selected VPC.
+     - **Auto-assign Public IP:** Choose "Enable" if you want your instance to have a public IP.
+     - **IAM Role:** If necessary, select an IAM role that you've previously set up.
+
+**NOTE : Check the boxex that contains allow https traffic from internet and http traffic from internet.**
+
+7. **Add Storage:**
+   - By default, a root volume will be added. You can adjust the size or add additional volumes if needed.
+
+8. **Add Tags (Optional):**
+   - You can add key-value pairs as tags to help you identify and organize your resources. This step is optional but can be very helpful.
+
+9. **Configure Security Group:**
+   - Create a new security group or select an existing one. This controls the inbound and outbound traffic to your instance. At a minimum, you should allow SSH (port 22) and HTTP/HTTPS (ports 80 and 443) if you want to access the instance via a web browser.
+
+10. **Review and Launch:**
+    - Review your instance details and configuration. Make sure everything looks correct.
+
+11. **Launch:**
+    - Click the "Launch" button.
+
+12. **Key Pair:**
+    - A pop-up will appear asking you to select or create a key pair. If you don't have one, you'll need to create a new one. Download the private key file (.pem) and keep it in a secure location.
+
+13. **Accessing Your Instance:**
+    - Once the instance is running, you can connect to it using SSH (Secure Shell) with the private key you downloaded.
+
+Congratulations! You have successfully launched an EC2 instance on AWS. Remember to stop or terminate your instance when you're not using it to avoid incurring unnecessary charges.
